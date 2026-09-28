@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giants Group LLC | Oportunidad de Negocio para Emprendedores Hispanos en Raleigh NC</title>
+    <meta name="description" content="Únete al equipo de emprendedores hispanos #1 en Carolina del Norte. Comisiones de 25-60%, sin inversión inicial. Construye tu negocio propio con Giants Group.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        :root {
+            --gold: #D4A944;
+            --gold-light: #E8C15B;
+            --gold-dark: #B8922E;
+            --black: #1A1A1A;
+            --black-soft: #2D2D2D;
+            --white: #FFFFFF;
+            --gray-light: #F5F5F5;
+            --gray: #E5E5E5;
+            --gray-dark: #4A4A4A;
+            --gradient-gold: linear-gradient(135deg, #D4A944 0%, #E8C15B 50%, #D4A944 100%);
+            --gradient-dark: linear-gradient(180deg, #1A1A1A 0%, #2D2D2D 100%);
+            --font-display: 'Playfair Display', Georgia, serif;
+            --font-body: 'Outfit', -apple-system, sans-serif;
+            --section-padding: clamp(60px, 10vw, 120px);
+            --container-width: 1200px;
+            --transition-fast: 0.2s ease;
+            --transition-medium: 0.4s ease;
+            --transition-slow: 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: var(--font-body); font-weight: 400; color: var(--black); background: var(--white); line-height: 1.6; overflow-x: hidden; }
+        .container { max-width: var(--container-width); margin: 0 auto; padding: 0 24px; }
+        .section-title { font-family: var(--font-display); font-size: clamp(2rem, 5vw, 3rem); font-weight: 700; color: var(--black); margin-bottom: 1rem; line-height: 1.2; }
+        .section-subtitle { font-size: 1.125rem; color: var(--gray-dark); max-width: 600px; }
+        .gold-text { color: var(--gold); }
+        .btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 16px 32px; border-radius: 50px; font-family: var(--font-body); font-size: 1rem; font-weight: 600; text-decoration: none; cursor: pointer; border: none; transition: all var(--transition-medium); }
+        .btn-primary { background: var(--black); color: var(--white); }
+        .btn-primary:hover { background: var(--gold); color: var(--black); transform: translateY(-2px); box-shadow: 0 10px 30px rgba(212, 169, 68, 0.3); }
+        .btn-secondary { background: transparent; color: var(--black); border: 2px solid var(--black); }
+        .btn-secondary:hover { background: var(--black); color: var(--white); transform: translateY(-2px); }
+        .btn-gold { background: var(--gradient-gold); color: var(--black); font-weight: 700; }
+        .btn-gold:hover { transform: translateY(-3px); box-shadow: 0 15px 40px rgba(212, 169, 68, 0.4); }
+
+        /* NAVBAR */
+        .navbar { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 20px 0; transition: all var(--transition-medium); }
+        .navbar.scrolled { background: rgba(26, 26, 26, 0.98); backdrop-filter: blur(20px); padding: 12px 0; box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2); }
+        .navbar .container { display: flex; align-items: center; justify-content: space-between; }
+        .logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+        .logo img { height: 50px; width: auto; }
+        .logo-text { font-family: var(--font-display); font-size: 1.5rem; font-weight: 700; color: var(--white); }
+        .nav-links { display: flex; align-items: center; gap: 40px; list-style: none; }
+        .nav-links a { color: var(--white); text-decoration: none; font-weight: 500; font-size: 0.95rem; position: relative; padding: 8px 0; transition: color var(--transition-fast); }
+        .nav-links a::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 2px; background: var(--gold); transition: width var(--transition-medium); }
+        .nav-links a:hover { color: var(--gold); }
+        .nav-links a:hover::after { width: 100%; }
+        .nav-cta { padding: 12px 24px !important; background: var(--gold) !important; color: var(--black) !important; border-radius: 50px; font-weight: 600 !important; }
+        .nav-cta::after { display: none !important; }
+        .nav-cta:hover { background: var(--gold-light) !important; transform: scale(1.05); }
+        .mobile-toggle { display: none; flex-direction: column; gap: 6px; cursor: pointer; padding: 10px; }
+        .mobile-toggle span { width: 28px; height: 2px; background: var(--white); transition: all var(--transition-fast); }
+
+        /* HERO */
+        .hero { position: relative; min-height: 100vh; display: flex; align-items: center; background: var(--gradient-dark); overflow: hidden; }
+        .hero-bg { position: absolute; inset: 0; z-index: 0; }
+        .hero-bg::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 20% 80%, rgba(212, 169, 68, 0.15) 0%, transparent 50%), radial-gradient(ellipse at 80% 20%, rgba(212, 169, 68, 0.1) 0%, transparent 40%); }
+        .hero-pattern { position: absolute; inset: 0; background-image: linear-gradient(rgba(212, 169, 68, 0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(212, 169, 68, 0.03) 1px, transparent 1px); background-size: 60px 60px; opacity: 0.5; }
+        .hero .container { position: relative; z-index: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; padding-top: 100px; padding-bottom: 60px; }
+        .hero-content { animation: fadeInUp 1s ease forwards; }
+        .hero-badge { display: inline-flex; align-items: center; gap: 8px; padding: 10px 20px; background: rgba(212, 169, 68, 0.1); border: 1px solid rgba(212, 169, 68, 0.3); border-radius: 50px; color: var(--gold); font-size: 0.875rem; font-weight: 500; margin-bottom: 24px; }
+        .hero-badge i { width: 16px; height: 16px; }
+        .hero h1 { font-family: var(--font-display); font-size: clamp(2.5rem, 6vw, 4rem); font-weight: 800; color: var(--white); line-height: 1.1; margin-bottom: 24px; }
+        .hero h1 span { color: var(--gold); display: block; }
+        .hero-description { font-size: 1.25rem; color: rgba(255, 255, 255, 0.8); margin-bottom: 16px; max-width: 500px; }
+        .hero-features { display: flex; flex-wrap: wrap; gap: 16px; margin-bottom: 40px; }
+        .hero-feature { display: flex; align-items: center; gap: 8px; padding: 8px 16px; background: rgba(255, 255, 255, 0.05); border-radius: 8px; color: rgba(255, 255, 255, 0.9); font-size: 0.9rem; }
+        .hero-feature i { color: var(--gold); width: 18px; height: 18px; }
+        .hero-buttons { display: flex; gap: 16px; flex-wrap: wrap; }
+        .hero-visual { position: relative; animation: fadeInRight 1s 0.3s ease forwards; opacity: 0; }
+        .hero-image-wrapper { position: relative; border-radius: 24px; overflow: hidden; box-shadow: 0 40px 80px rgba(0, 0, 0, 0.4); }
+        .hero-image-wrapper::before { content: ''; position: absolute; inset: 0; border: 2px solid rgba(212, 169, 68, 0.3); border-radius: 24px; z-index: 2; pointer-events: none; }
+        .hero-image-placeholder { width: 100%; aspect-ratio: 4/3; background: linear-gradient(135deg, var(--black-soft) 0%, var(--black) 100%); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 20px; padding: 40px; }
+        .hero-image-placeholder img { width: 200px; height: auto; filter: drop-shadow(0 10px 30px rgba(212, 169, 68, 0.3)); }
+        .hero-image-placeholder span { color: rgba(255, 255, 255, 0.5); font-size: 0.9rem; }
+        .floating-card { position: absolute; background: var(--white); border-radius: 16px; padding: 16px 20px; box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2); animation: float 4s ease-in-out infinite; }
+        .floating-card-1 { bottom: 20%; left: -40px; animation-delay: 0s; }
+        .floating-card-2 { top: 10%; right: -30px; animation-delay: 2s; }
+        .floating-card .stat-number { font-family: var(--font-display); font-size: 1.75rem; font-weight: 700; color: var(--gold); }
+        .floating-card .stat-label { font-size: 0.8rem; color: var(--gray-dark); }
+
+        /* STATS */
+        .stats { background: var(--white); padding: 60px 0; border-bottom: 1px solid var(--gray); }
+        .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px; }
+        .stat-item { text-align: center; padding: 24px; position: relative; }
+        .stat-item::after { content: ''; position: absolute; right: 0; top: 50%; transform: translateY(-50%); width: 1px; height: 60px; background: var(--gray); }
+        .stat-item:last-child::after { display: none; }
+        .stat-number { font-family: var(--font-display); font-size: clamp(2.5rem, 5vw, 3.5rem); font-weight: 800; color: var(--black); line-height: 1; margin-bottom: 8px; }
+        .stat-number span { color: var(--gold); }
+        .stat-label { font-size: 1rem; color: var(--gray-dark); font-weight: 500; }
+
+        /* OPORTUNIDAD */
+        .oportunidad { padding: var(--section-padding) 0; background: var(--gray-light); position: relative; overflow: hidden; }
+        .oportunidad::before { content: ''; position: absolute; top: 0; right: 0; width: 50%; height: 100%; background: radial-gradient(ellipse at 100% 50%, rgba(212, 169, 68, 0.08) 0%, transparent 60%); }
+        .oportunidad .container { position: relative; }
+        .oportunidad-header { text-align: center; margin-bottom: 60px; }
+        .oportunidad-header .section-subtitle { margin: 0 auto; }
+        .oportunidad-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; max-width: 900px; margin: 0 auto; }
+        .oportunidad-card { background: var(--white); border-radius: 20px; padding: 32px; position: relative; overflow: hidden; transition: all var(--transition-medium); border: 1px solid transparent; }
+        .oportunidad-card:hover { transform: translateY(-5px); box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1); border-color: var(--gold); }
+        .oportunidad-card::before { content: ''; position: absolute; top: 0; left: 0; width: 4px; height: 100%; background: var(--gradient-gold); }
+        .oportunidad-icon { width: 48px; height: 48px; background: linear-gradient(135deg, rgba(212, 169, 68, 0.1) 0%, rgba(212, 169, 68, 0.05) 100%); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; }
+        .oportunidad-icon i { color: var(--gold); width: 24px; height: 24px; }
+        .oportunidad-card h3 { font-family: var(--font-body); font-size: 1.1rem; font-weight: 600; color: var(--black); line-height: 1.5; }
+        .oportunidad-cta { text-align: center; margin-top: 50px; }
+
+        /* APRENDIZAJE */
+        .aprendizaje { padding: var(--section-padding) 0; background: var(--white); }
+        .aprendizaje-header { text-align: center; margin-bottom: 60px; }
+        .aprendizaje-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; }
+        .aprendizaje-card { background: var(--gray-light); border-radius: 24px; padding: 40px 28px; text-align: center; transition: all var(--transition-medium); position: relative; overflow: hidden; }
+        .aprendizaje-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: var(--gradient-gold); transform: scaleX(0); transition: transform var(--transition-medium); }
+        .aprendizaje-card:hover { background: var(--white); box-shadow: 0 25px 60px rgba(0, 0, 0, 0.1); transform: translateY(-8px); }
+        .aprendizaje-card:hover::before { transform: scaleX(1); }
+        .aprendizaje-icon { width: 80px; height: 80px; background: var(--white); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto 24px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); transition: all var(--transition-medium); }
+        .aprendizaje-card:hover .aprendizaje-icon { background: var(--black); }
+        .aprendizaje-icon i { width: 36px; height: 36px; color: var(--gold); transition: color var(--transition-medium); }
+        .aprendizaje-card:hover .aprendizaje-icon i { color: var(--gold-light); }
+        .aprendizaje-card h3 { font-family: var(--font-display); font-size: 1.25rem; font-weight: 700; color: var(--black); margin-bottom: 12px; }
+        .aprendizaje-card p { font-size: 0.95rem; color: var(--gray-dark); line-height: 1.6; }
+
+        /* MODELO */
+        .modelo { padding: var(--section-padding) 0; background: var(--black); position: relative; overflow: hidden; }
+        .modelo::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 0% 50%, rgba(212, 169, 68, 0.1) 0%, transparent 50%); }
+        .modelo .container { position: relative; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+        .modelo-content h2 { color: var(--white); margin-bottom: 24px; }
+        .modelo-content .intro { font-size: 1.125rem; color: rgba(255, 255, 255, 0.7); margin-bottom: 32px; }
+        .modelo-features { list-style: none; }
+        .modelo-features li { display: flex; align-items: flex-start; gap: 16px; padding: 16px 0; border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
+        .modelo-features li:last-child { border-bottom: none; }
+        .modelo-features .check { width: 28px; height: 28px; background: rgba(212, 169, 68, 0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+        .modelo-features .check i { width: 16px; height: 16px; color: var(--gold); }
+        .modelo-features span { color: rgba(255, 255, 255, 0.9); font-size: 1rem; line-height: 1.6; }
+        .modelo-disclaimer { margin-top: 32px; padding: 16px 20px; background: rgba(255, 255, 255, 0.05); border-radius: 12px; border-left: 3px solid var(--gold); }
+        .modelo-disclaimer p { font-size: 0.85rem; color: rgba(255, 255, 255, 0.5); font-style: italic; }
+        .embudo { background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 24px; padding: 40px; }
+        .embudo-title { text-align: center; color: var(--white); font-family: var(--font-display); font-size: 1.5rem; font-weight: 700; margin-bottom: 32px; }
+        .embudo-steps { display: flex; flex-direction: column; gap: 12px; }
+        .embudo-step { display: flex; align-items: center; justify-content: space-between; padding: 16px 24px; background: rgba(255, 255, 255, 0.05); border-radius: 12px; transition: all var(--transition-fast); }
+        .embudo-step:hover { background: rgba(212, 169, 68, 0.1); }
+        .embudo-step .label { color: rgba(255, 255, 255, 0.8); font-weight: 500; }
+        .embudo-step .value { color: var(--gold); font-family: var(--font-display); font-size: 1.25rem; font-weight: 700; }
+        .embudo-result { margin-top: 24px; padding: 24px; background: var(--gradient-gold); border-radius: 16px; text-align: center; }
+        .embudo-result .amount { font-family: var(--font-display); font-size: 2rem; font-weight: 800; color: var(--black); }
+        .embudo-result .period { font-size: 0.9rem; color: var(--black-soft); font-weight: 500; }
+
+        /* EQUIPO */
+        .equipo { padding: var(--section-padding) 0; background: var(--gray-light); }
+        .equipo-header { text-align: center; margin-bottom: 60px; }
+        .equipo-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; max-width: 1000px; margin: 0 auto; }
+        .equipo-card { background: var(--white); border-radius: 24px; overflow: hidden; text-align: center; transition: all var(--transition-medium); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); }
+        .equipo-card:hover { transform: translateY(-10px); box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12); }
+        .equipo-image { width: 100%; aspect-ratio: 1; background: var(--gradient-dark); position: relative; overflow: hidden; }
+        .equipo-image-placeholder { width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; }
+        .equipo-image-placeholder i { width: 60px; height: 60px; color: var(--gold); opacity: 0.5; }
+        .equipo-image-placeholder span { color: rgba(255, 255, 255, 0.3); font-size: 0.85rem; }
+        .equipo-info { padding: 28px; }
+        .equipo-name { font-family: var(--font-display); font-size: 1.375rem; font-weight: 700; color: var(--black); margin-bottom: 4px; }
+        .equipo-role { font-size: 0.9rem; color: var(--gold); font-weight: 600; margin-bottom: 16px; }
+        .equipo-quote { font-size: 0.95rem; color: var(--gray-dark); font-style: italic; line-height: 1.6; }
+
+        /* TESTIMONIOS */
+        .testimonios { padding: var(--section-padding) 0; background: var(--white); }
+        .testimonios-header { text-align: center; margin-bottom: 60px; }
+        .testimonios-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+        .testimonio-card { background: var(--gray-light); border-radius: 24px; padding: 36px; position: relative; transition: all var(--transition-medium); }
+        .testimonio-card:hover { background: var(--white); box-shadow: 0 25px 60px rgba(0, 0, 0, 0.1); transform: translateY(-5px); }
+        .testimonio-quote-icon { width: 48px; height: 48px; color: var(--gold); opacity: 0.3; margin-bottom: 20px; }
+        .testimonio-text { font-size: 1.05rem; color: var(--black); line-height: 1.7; margin-bottom: 24px; }
+        .testimonio-author { display: flex; align-items: center; gap: 16px; padding-top: 20px; border-top: 1px solid var(--gray); }
+        .testimonio-avatar { width: 56px; height: 56px; background: var(--gradient-gold); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-size: 1.25rem; font-weight: 700; color: var(--black); }
+        .testimonio-info h4 { font-weight: 600; color: var(--black); margin-bottom: 4px; }
+        .testimonio-info span { font-size: 0.85rem; color: var(--gray-dark); }
+
+        /* FAQ */
+        .faq { padding: var(--section-padding) 0; background: var(--gray-light); }
+        .faq-header { text-align: center; margin-bottom: 60px; }
+        .faq-container { max-width: 800px; margin: 0 auto; }
+        .faq-item { background: var(--white); border-radius: 16px; margin-bottom: 16px; overflow: hidden; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03); transition: all var(--transition-fast); }
+        .faq-item:hover { box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); }
+        .faq-question { width: 100%; padding: 24px 28px; display: flex; align-items: center; justify-content: space-between; gap: 20px; background: none; border: none; cursor: pointer; text-align: left; font-family: var(--font-body); font-size: 1.05rem; font-weight: 600; color: var(--black); transition: color var(--transition-fast); }
+        .faq-question:hover { color: var(--gold); }
+        .faq-question i { width: 24px; height: 24px; color: var(--gold); transition: transform var(--transition-fast); flex-shrink: 0; }
+        .faq-item.active .faq-question i { transform: rotate(180deg); }
+        .faq-answer { max-height: 0; overflow: hidden; transition: max-height var(--transition-medium); }
+        .faq-item.active .faq-answer { max-height: 300px; }
+        .faq-answer p { padding: 0 28px 24px; color: var(--gray-dark); line-height: 1.7; }
+
+        /* APLICAR */
+        .aplicar { padding: var(--section-padding) 0; background: var(--black); position: relative; overflow: hidden; }
+        .aplicar::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 20% 80%, rgba(212, 169, 68, 0.15) 0%, transparent 50%); }
+        .aplicar .container { position: relative; display: grid; grid-template-columns: 1fr 1.2fr; gap: 80px; align-items: center; }
+        .aplicar-info h2 { color: var(--white); margin-bottom: 16px; }
+        .aplicar-info .subtitle { font-size: 1.125rem; color: rgba(255, 255, 255, 0.7); margin-bottom: 40px; }
+        .aplicar-leader { display: flex; align-items: center; gap: 20px; padding: 24px; background: rgba(255, 255, 255, 0.05); border-radius: 16px; border: 1px solid rgba(255, 255, 255, 0.1); }
+        .aplicar-leader-image { width: 80px; height: 80px; background: var(--gradient-gold); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+        .aplicar-leader-image i { width: 40px; height: 40px; color: var(--black); }
+        .aplicar-leader-info h4 { color: var(--white); font-weight: 600; margin-bottom: 4px; }
+        .aplicar-leader-info span { font-size: 0.9rem; color: var(--gold); }
+        .aplicar-leader-info blockquote { margin-top: 12px; font-style: italic; color: rgba(255, 255, 255, 0.6); font-size: 0.95rem; line-height: 1.5; }
+        .aplicar-form { background: var(--white); border-radius: 24px; padding: 48px; box-shadow: 0 40px 80px rgba(0, 0, 0, 0.3); }
+        .form-title { font-family: var(--font-display); font-size: 1.5rem; font-weight: 700; color: var(--black); text-align: center; margin-bottom: 8px; }
+        .form-subtitle { text-align: center; color: var(--gray-dark); margin-bottom: 32px; }
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; font-size: 0.9rem; font-weight: 600; color: var(--black); margin-bottom: 8px; }
+        .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 14px 18px; border: 2px solid var(--gray); border-radius: 12px; font-family: var(--font-body); font-size: 1rem; color: var(--black); background: var(--white); transition: all var(--transition-fast); }
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus { outline: none; border-color: var(--gold); box-shadow: 0 0 0 4px rgba(212, 169, 68, 0.1); }
+        .form-group textarea { resize: vertical; min-height: 100px; }
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+        .form-submit { width: 100%; margin-top: 24px; }
+        .form-privacy { text-align: center; margin-top: 16px; font-size: 0.8rem; color: var(--gray-dark); }
+        .form-privacy i { width: 14px; height: 14px; vertical-align: middle; margin-right: 4px; }
+
+        /* FOOTER */
+        .footer { background: var(--black-soft); padding: 60px 0 30px; }
+        .footer-content { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 60px; padding-bottom: 40px; border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
+        .footer-brand .logo { margin-bottom: 20px; }
+        .footer-brand p { color: rgba(255, 255, 255, 0.6); font-size: 0.95rem; line-height: 1.7; margin-bottom: 24px; }
+        .footer-social { display: flex; gap: 12px; }
+        .footer-social a { width: 44px; height: 44px; background: rgba(255, 255, 255, 0.05); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: var(--white); transition: all var(--transition-fast); }
+        .footer-social a:hover { background: var(--gold); color: var(--black); transform: translateY(-3px); }
+        .footer-social a i { width: 20px; height: 20px; }
+        .footer-column h4 { color: var(--white); font-weight: 600; margin-bottom: 20px; font-size: 1rem; }
+        .footer-column ul { list-style: none; }
+        .footer-column ul li { margin-bottom: 12px; }
+        .footer-column ul a { color: rgba(255, 255, 255, 0.6); text-decoration: none; font-size: 0.95rem; transition: color var(--transition-fast); }
+        .footer-column ul a:hover { color: var(--gold); }
+        .footer-contact-item { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+        .footer-contact-item i { width: 18px; height: 18px; color: var(--gold); }
+        .footer-contact-item span, .footer-contact-item a { color: rgba(255, 255, 255, 0.6); font-size: 0.95rem; text-decoration: none; }
+        .footer-contact-item a:hover { color: var(--gold); }
+        .footer-bottom { padding-top: 30px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; }
+        .footer-copyright { color: rgba(255, 255, 255, 0.4); font-size: 0.85rem; }
+        .footer-legal { display: flex; gap: 24px; }
+        .footer-legal a { color: rgba(255, 255, 255, 0.4); font-size: 0.85rem; text-decoration: none; transition: color var(--transition-fast); }
+        .footer-legal a:hover { color: var(--gold); }
+        .footer-disclaimer { margin-top: 30px; padding: 20px; background: rgba(255, 255, 255, 0.03); border-radius: 12px; }
+        .footer-disclaimer p { color: rgba(255, 255, 255, 0.3); font-size: 0.8rem; line-height: 1.6; text-align: center; }
+
+        /* WHATSAPP BUTTON */
+        .whatsapp-float { position: fixed; bottom: 30px; right: 30px; z-index: 999; }
+        .whatsapp-float a { display: flex; align-items: center; justify-content: center; width: 60px; height: 60px; background: #25D366; border-radius: 50%; box-shadow: 0 10px 30px rgba(37, 211, 102, 0.4); transition: all var(--transition-medium); }
+        .whatsapp-float a:hover { transform: scale(1.1); box-shadow: 0 15px 40px rgba(37, 211, 102, 0.5); }
+        .whatsapp-float svg { width: 32px; height: 32px; fill: white; }
+
+        /* ANIMATIONS */
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes fadeInRight { from { opacity: 0; transform: translateX(30px); } to { opacity: 1; transform: translateX(0); } }
+        @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-15px); } }
+
+        /* RESPONSIVE */
+        @media (max-width: 1024px) {
+            .hero .container { grid-template-columns: 1fr; text-align: center; }
+            .hero-content { order: 1; }
+            .hero-visual { order: 2; max-width: 500px; margin: 0 auto; }
+            .hero-buttons, .hero-features { justify-content: center; }
+            .stats-grid { grid-template-columns: repeat(2, 1fr); }
+            .stat-item:nth-child(2)::after { display: none; }
+            .aprendizaje-grid { grid-template-columns: repeat(2, 1fr); }
+            .modelo .container { grid-template-columns: 1fr; }
+            .equipo-grid, .testimonios-grid { grid-template-columns: repeat(2, 1fr); }
+            .aplicar .container { grid-template-columns: 1fr; }
+            .aplicar-info { text-align: center; }
+            .aplicar-leader { justify-content: center; flex-wrap: wrap; text-align: center; }
+            .footer-content { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 768px) {
+            .nav-links { display: none; position: absolute; top: 100%; left: 0; right: 0; background: var(--black); flex-direction: column; padding: 20px; gap: 0; }
+            .nav-links.active { display: flex; }
+            .nav-links li { width: 100%; }
+            .nav-links a { display: block; padding: 16px; text-align: center; }
+            .mobile-toggle { display: flex; }
+            .stats-grid, .oportunidad-grid, .aprendizaje-grid, .equipo-grid, .testimonios-grid { grid-template-columns: 1fr; }
+            .stat-item::after { display: none; }
+            .equipo-grid { max-width: 400px; }
+            .form-row { grid-template-columns: 1fr; }
+            .aplicar-form { padding: 32px 24px; }
+            .footer-content { grid-template-columns: 1fr; text-align: center; }
+            .footer-brand .logo, .footer-social { justify-content: center; }
+            .footer-bottom { flex-direction: column; text-align: center; }
+            .floating-card { display: none; }
+        }
+        @media (max-width: 480px) {
+            .hero h1 { font-size: 2rem; }
+            .section-title { font-size: 1.75rem; }
+            .btn { padding: 14px 24px; font-size: 0.95rem; }
+            .hero-buttons { flex-direction: column; width: 100%; }
+            .hero-buttons .btn { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+    <!-- NAVEGACIÓN -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <a href="#" class="logo">
+                <svg width="50" height="50" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="50" cy="55" r="30" fill="#1A1A1A" stroke="#D4A944" stroke-width="2"/>
+                    <path d="M25 35 L35 15 L50 25 L65 15 L75 35 L65 30 L50 40 L35 30 Z" fill="#D4A944"/>
+                    <circle cx="30" cy="15" r="5" fill="#D4A944"/>
+                    <circle cx="50" cy="10" r="5" fill="#D4A944"/>
+                    <circle cx="70" cy="15" r="5" fill="#D4A944"/>
+                    <circle cx="50" cy="55" r="15" fill="white"/>
+                    <text x="50" y="62" text-anchor="middle" font-size="20" font-weight="bold" fill="#1A1A1A">👑</text>
+                </svg>
+                <span class="logo-text">GiantsGroup</span>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#oportunidad">Oportunidad</a></li>
+                <li><a href="#aprendizaje">Qué Aprenderás</a></li>
+                <li><a href="#modelo">Modelo</a></li>
+                <li><a href="#equipo">Equipo</a></li>
+                <li><a href="#faq">Preguntas</a></li>
+                <li><a href="#aplicar" class="nav-cta">Aplicar Ahora</a></li>
+            </ul>
+            <div class="mobile-toggle" id="mobileToggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero" id="hero">
+        <div class="hero-bg"><div class="hero-pattern"></div></div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <i data-lucide="crown"></i>
+                    <span>Distribuidores Autorizados desde 2019</span>
+                </div>
+                <h1>Construye Tu <span>Negocio Propio</span></h1>
+                <p class="hero-description">En la industria de productos premium para el hogar. Únete a un equipo que ha generado +$1 millón en ventas.</p>
+                <div class="hero-features">
+                    <div class="hero-feature"><i data-lucide="percent"></i><span>Comisiones 25-60%</span></div>
+                    <div class="hero-feature"><i data-lucide="wallet"></i><span>Sin inversión inicial</span></div>
+                    <div class="hero-feature"><i data-lucide="graduation-cap"></i><span>Entrenamiento incluido</span></div>
+                </div>
+                <div class="hero-buttons">
+                    <a href="#aplicar" class="btn btn-gold"><i data-lucide="rocket"></i>Postúlate Ahora</a>
+                    <a href="https://wa.me/19192722275" target="_blank" class="btn btn-secondary" style="color: white; border-color: white;"><i data-lucide="message-circle"></i>Hablar con un Asesor</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="hero-image-wrapper">
+                    <div class="hero-image-placeholder">
+                        <svg width="180" height="180" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="100" cy="115" r="55" fill="#2D2D2D" stroke="#D4A944" stroke-width="3"/>
+                            <path d="M45 65 L60 25 L100 45 L140 25 L155 65 L135 55 L100 75 L65 55 Z" fill="url(#goldGrad)"/>
+                            <circle cx="60" cy="25" r="10" fill="#D4A944"/>
+                            <circle cx="100" cy="15" r="10" fill="#E8C15B"/>
+                            <circle cx="140" cy="25" r="10" fill="#D4A944"/>
+                            <circle cx="100" cy="115" r="35" fill="white"/>
+                            <path d="M85 100 C85 90, 115 90, 115 100 C120 105, 120 115, 115 120 C110 130, 90 130, 85 120 C80 115, 80 105, 85 100" fill="#1A1A1A"/>
+                            <ellipse cx="100" cy="105" rx="8" ry="5" fill="#D4A944"/>
+                            <rect x="90" y="145" width="20" height="35" fill="#1A1A1A"/>
+                            <path d="M85 180 L100 195 L115 180" fill="#D4A944"/>
+                            <defs>
+                                <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#D4A944"/>
+                                    <stop offset="50%" style="stop-color:#E8C15B"/>
+                                    <stop offset="100%" style="stop-color:#D4A944"/>
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                        <span style="font-family: var(--font-display); font-size: 1.5rem; font-weight: 700; color: var(--gold);">GiantsGroup</span>
+                        <span>Desarrollo Profesional</span>
+                    </div>
+                </div>
+                <div class="floating-card floating-card-1"><div class="stat-number">+$1M</div><div class="stat-label">En ventas generadas</div></div>
+                <div class="floating-card floating-card-2"><div class="stat-number">6+</div><div class="stat-label">Años de experiencia</div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ESTADÍSTICAS -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item"><div class="stat-number">6<span>+</span></div><div class="stat-label">Años de Experiencia</div></div>
+                <div class="stat-item"><div class="stat-number"><span>+$</span>1M</div><div class="stat-label">En Ventas Generadas</div></div>
+                <div class="stat-item"><div class="stat-number">50<span>+</span></div><div class="stat-label">Emprendedores Formados</div></div>
+                <div class="stat-item"><div class="stat-number">1</div><div class="stat-label">Oficina en Raleigh, NC</div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- OPORTUNIDAD -->
+    <section class="oportunidad" id="oportunidad">
+        <div class="container">
+            <div class="oportunidad-header">
+                <h2 class="section-title">Esta oportunidad es <span class="gold-text">para ti</span> si...</h2>
+                <p class="section-subtitle">Identificamos el perfil de personas que logran los mejores resultados con nuestro sistema.</p>
+            </div>
+            <div class="oportunidad-grid">
+                <div class="oportunidad-card"><div class="oportunidad-icon"><i data-lucide="flag"></i></div><h3>Sabes que viniste a EE.UU. para ser empresario, no empleado.</h3></div>
+                <div class="oportunidad-card"><div class="oportunidad-icon"><i data-lucide="clock"></i></div><h3>Te cansaste de que te paguen por horas y quieres poner precio a tu tiempo.</h3></div>
+                <div class="oportunidad-card"><div class="oportunidad-icon"><i data-lucide="briefcase"></i></div><h3>Buscas un negocio que puedas empezar sin dejar tu trabajo actual.</h3></div>
+                <div class="oportunidad-card"><div class="oportunidad-icon"><i data-lucide="compass"></i></div><h3>Quieres emprender en ventas pero no sabes por dónde empezar.</h3></div>
+                <div class="oportunidad-card"><div class="oportunidad-icon"><i data-lucide="users"></i></div><h3>Buscas una comunidad que te impulse a ser mejor cada día.</h3></div>
+                <div class="oportunidad-card"><div class="oportunidad-icon"><i data-lucide="flame"></i></div><h3>Tienes determinación, aunque no tengas experiencia.</h3></div>
+            </div>
+            <div class="oportunidad-cta"><a href="#aplicar" class="btn btn-primary"><i data-lucide="check-circle"></i>Cumplo con esto → Quiero Aplicar</a></div>
+        </div>
+    </section>
+
+    <!-- QUÉ APRENDERÁS -->
+    <section class="aprendizaje" id="aprendizaje">
+        <div class="container">
+            <div class="aprendizaje-header">
+                <h2 class="section-title">¿Qué aprenderás <span class="gold-text">con nosotros</span>?</h2>
+                <p class="section-subtitle" style="margin: 0 auto;">Desarrollamos emprendedores completos con un sistema probado de formación.</p>
+            </div>
+            <div class="aprendizaje-grid">
+                <div class="aprendizaje-card"><div class="aprendizaje-icon"><i data-lucide="trending-up"></i></div><h3>Ventas de Alto Ticket</h3><p>Aprende a presentar, cerrar y dar seguimiento a ventas de productos premium.</p></div>
+                <div class="aprendizaje-card"><div class="aprendizaje-icon"><i data-lucide="users"></i></div><h3>Liderazgo y Equipos</h3><p>Desarrolla las habilidades para formar y liderar tu propio equipo de vendedores.</p></div>
+                <div class="aprendizaje-card"><div class="aprendizaje-icon"><i data-lucide="brain"></i></div><h3>Desarrollo Personal</h3><p>Retiros empresariales, entrenamientos semanales y comunidad de apoyo.</p></div>
+                <div class="aprendizaje-card"><div class="aprendizaje-icon"><i data-lucide="target"></i></div><h3>Sistemas de Prospección</h3><p>Embudos de venta, gestión de prospectos y flujo constante de oportunidades.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MODELO DE NEGOCIO -->
+    <section class="modelo" id="modelo">
+        <div class="container">
+            <div class="modelo-content">
+                <h2 class="section-title">Un negocio real con <span class="gold-text">resultados reales</span></h2>
+                <p class="intro">En Giants Group trabajamos con productos premium para el hogar con más de 65 años en el mercado americano.</p>
+                <ul class="modelo-features">
+                    <li><div class="check"><i data-lucide="check"></i></div><span>Comisiones de 25% a 60% según tu desarrollo</span></li>
+                    <li><div class="check"><i data-lucide="check"></i></div><span>Sin inversión inicial para empezar</span></li>
+                    <li><div class="check"><i data-lucide="check"></i></div><span>Sin inventario - la empresa maneja todo</span></li>
+                    <li><div class="check"><i data-lucide="check"></i></div><span>Financiamiento para tus clientes incluido</span></li>
+                    <li><div class="check"><i data-lucide="check"></i></div><span>Entrenamiento completo vía academia online</span></li>
+                    <li><div class="check"><i data-lucide="check"></i></div><span>Productos con garantía de 50 años</span></li>
+                    <li><div class="check"><i data-lucide="check"></i></div><span>Mentoría directa de líderes con experiencia</span></li>
+                </ul>
+                <div class="modelo-disclaimer"><p>Los resultados varían según el esfuerzo individual. Los datos reflejan el total del equipo, no garantías individuales.</p></div>
+            </div>
+            <div class="modelo-visual">
+                <div class="embudo">
+                    <h3 class="embudo-title">¿Cómo generas ingresos?</h3>
+                    <div class="embudo-steps">
+                        <div class="embudo-step"><span class="label">Prospectos contactados</span><span class="value">120</span></div>
+                        <div class="embudo-step"><span class="label">Citas agendadas</span><span class="value">30</span></div>
+                        <div class="embudo-step"><span class="label">Visitas realizadas</span><span class="value">15</span></div>
+                        <div class="embudo-step"><span class="label">Demostraciones</span><span class="value">12</span></div>
+                        <div class="embudo-step"><span class="label">Ventas cerradas</span><span class="value">3-6</span></div>
+                    </div>
+                    <div class="embudo-result"><div class="amount">$2,000 - $5,000</div><div class="period">Ingreso potencial mensual*</div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EQUIPO -->
+    <section class="equipo" id="equipo">
+        <div class="container">
+            <div class="equipo-header">
+                <h2 class="section-title">Conoce a los líderes de <span class="gold-text">Giants Group</span></h2>
+                <p class="section-subtitle" style="margin: 0 auto;">Un equipo comprometido con tu desarrollo y éxito empresarial.</p>
+            </div>
+            <div class="equipo-grid">
+                <div class="equipo-card"><div class="equipo-image"><div class="equipo-image-placeholder"><i data-lucide="user"></i><span>Foto del líder</span></div></div><div class="equipo-info"><h3 class="equipo-name">[Nombre del CEO]</h3><p class="equipo-role">Fundador & CEO</p><p class="equipo-quote">"Formamos personas que deciden crecer. No buscamos perfección, buscamos determinación."</p></div></div>
+                <div class="equipo-card"><div class="equipo-image"><div class="equipo-image-placeholder"><i data-lucide="user"></i><span>Foto del líder</span></div></div><div class="equipo-info"><h3 class="equipo-name">[Nombre]</h3><p class="equipo-role">Director(a) de Ventas</p><p class="equipo-quote">"Cada día es una oportunidad para superarnos y ayudar a otros a lograr sus metas."</p></div></div>
+                <div class="equipo-card"><div class="equipo-image"><div class="equipo-image-placeholder"><i data-lucide="user"></i><span>Foto del líder</span></div></div><div class="equipo-info"><h3 class="equipo-name">[Nombre]</h3><p class="equipo-role">Líder de Entrenamiento</p><p class="equipo-quote">"El conocimiento es poder, pero la acción genera resultados."</p></div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIOS -->
+    <section class="testimonios" id="testimonios">
+        <div class="container">
+            <div class="testimonios-header">
+                <h2 class="section-title">Ellos también empezaron <span class="gold-text">desde cero</span></h2>
+                <p class="section-subtitle" style="margin: 0 auto;">Historias reales de emprendedores que transformaron su vida.</p>
+            </div>
+            <div class="testimonios-grid">
+                <div class="testimonio-card">
+                    <svg class="testimonio-quote-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
+                    <p class="testimonio-text">"Llegué a EE.UU. sin saber inglés y trabajando por $12/hora. En 2 años con Giants Group, gano más que en toda mi carrera anterior."</p>
+                    <div class="testimonio-author"><div class="testimonio-avatar">MG</div><div class="testimonio-info"><h4>María G.</h4><span>Distribuidora Senior • 3 años</span></div></div>
+                </div>
+                <div class="testimonio-card">
+                    <svg class="testimonio-quote-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
+                    <p class="testimonio-text">"Nunca había vendido nada en mi vida. El sistema y el entrenamiento me dieron la confianza que necesitaba. Hoy tengo mi propio equipo."</p>
+                    <div class="testimonio-author"><div class="testimonio-avatar">CR</div><div class="testimonio-info"><h4>Carlos R.</h4><span>Líder de Equipo • 18 meses</span></div></div>
+                </div>
+                <div class="testimonio-card">
+                    <svg class="testimonio-quote-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
+                    <p class="testimonio-text">"Buscaba algo que pudiera hacer mientras cuidaba a mis hijos. Giants Group me dio esa flexibilidad sin sacrificar mis metas financieras."</p>
+                    <div class="testimonio-author"><div class="testimonio-avatar">AP</div><div class="testimonio-info"><h4>Ana P.</h4><span>Emprendedora • 1 año</span></div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq" id="faq">
+        <div class="container">
+            <div class="faq-header">
+                <h2 class="section-title">Preguntas <span class="gold-text">frecuentes</span></h2>
+                <p class="section-subtitle" style="margin: 0 auto;">Todo lo que necesitas saber antes de dar el siguiente paso.</p>
+            </div>
+            <div class="faq-container">
+                <div class="faq-item"><button class="faq-question">¿Necesito experiencia en ventas?<i data-lucide="chevron-down"></i></button><div class="faq-answer"><p>No. Nuestro programa de entrenamiento te enseña todo desde cero. Lo que buscamos es determinación y ganas de aprender.</p></div></div>
+                <div class="faq-item"><button class="faq-question">¿Cuánto tengo que invertir para empezar?<i data-lucide="chevron-down"></i></button><div class="faq-answer"><p>Cero. No hay cuota de entrada, no compras inventario y no pagas por entrenamiento. Tu única inversión es tu tiempo y esfuerzo.</p></div></div>
+                <div class="faq-item"><button class="faq-question">¿Puedo hacerlo mientras tengo otro trabajo?<i data-lucide="chevron-down"></i></button><div class="faq-answer"><p>Sí. Muchos de nuestros emprendedores comenzaron dedicando 10-15 horas por semana mientras mantenían su empleo.</p></div></div>
+                <div class="faq-item"><button class="faq-question">¿Qué tipo de productos se venden?<i data-lucide="chevron-down"></i></button><div class="faq-answer"><p>Trabajamos con productos premium para el hogar: sistemas de cocción, filtración de agua y utensilios de alta calidad con garantía de 50 años.</p></div></div>
+                <div class="faq-item"><button class="faq-question">¿Es esto legal? ¿Es un esquema piramidal?<i data-lucide="chevron-down"></i></button><div class="faq-answer"><p>Absolutamente legal. Trabajamos con una empresa miembro de la Direct Selling Association (DSA) con 65+ años de operación. Los ingresos vienen de vender productos reales.</p></div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FORMULARIO -->
+    <section class="aplicar" id="aplicar">
+        <div class="container">
+            <div class="aplicar-info">
+                <h2 class="section-title">Cupos limitados <span class="gold-text">cada mes</span></h2>
+                <p class="subtitle">No pierdas tu lugar. Tus datos son 100% confidenciales.</p>
+                <div class="aplicar-leader">
+                    <div class="aplicar-leader-image"><i data-lucide="crown"></i></div>
+                    <div class="aplicar-leader-info">
+                        <h4>[Nombre del CEO]</h4>
+                        <span>Fundador & CEO</span>
+                        <blockquote>"No buscamos perfección. Buscamos determinación. Si tienes eso, aplica."</blockquote>
+                    </div>
+                </div>
+            </div>
+            <div class="aplicar-form">
+                <h3 class="form-title">Solicitud de Información</h3>
+                <p class="form-subtitle">Completa el formulario y te contactaremos en 24-48 horas</p>
+                <form id="applicationForm">
+                    <div class="form-group"><label>¿Cuál es tu nombre completo? *</label><input type="text" required placeholder="Tu nombre completo"></div>
+                    <div class="form-row">
+                        <div class="form-group"><label>¿Cuál es tu número de WhatsApp? *</label><input type="tel" required placeholder="(919) 000-0000"></div>
+                        <div class="form-group"><label>¿En qué ciudad vives? *</label><input type="text" required placeholder="Tu ciudad"></div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group"><label>Situación laboral actual *</label><select required><option value="">Selecciona</option><option>Empleado tiempo completo</option><option>Empleado medio tiempo</option><option>Desempleado</option><option>Negocio propio</option><option>Estudiante</option></select></div>
+                        <div class="form-group"><label>¿Tienes experiencia en ventas? *</label><select required><option value="">Selecciona</option><option>Sí, mucha</option><option>Algo de experiencia</option><option>No, pero quiero aprender</option></select></div>
+                    </div>
+                    <div class="form-group"><label>¿Qué te motiva a buscar esta oportunidad? *</label><textarea required placeholder="Cuéntanos brevemente..."></textarea></div>
+                    <button type="submit" class="btn btn-gold form-submit"><i data-lucide="send"></i>Enviar Aplicación</button>
+                    <p class="form-privacy"><i data-lucide="lock"></i>Tu información está protegida y nunca será compartida.</p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="#" class="logo">
+                        <svg width="40" height="40" viewBox="0 0 100 100"><circle cx="50" cy="55" r="30" fill="#1A1A1A" stroke="#D4A944" stroke-width="2"/><path d="M25 35 L35 15 L50 25 L65 15 L75 35" fill="#D4A944"/></svg>
+                        <span class="logo-text">GiantsGroup</span>
+                    </a>
+                    <p>Formamos personas que deciden crecer. Negocio con sistema y visión. Distribuidores Autorizados.</p>
+                    <div class="footer-social">
+                        <a href="https://instagram.com/giantsgroup" target="_blank"><i data-lucide="instagram"></i></a>
+                        <a href="https://facebook.com/giantsgroup" target="_blank"><i data-lucide="facebook"></i></a>
+                        <a href="https://wa.me/19192722275" target="_blank"><i data-lucide="message-circle"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column"><h4>Enlaces</h4><ul><li><a href="#oportunidad">Oportunidad</a></li><li><a href="#aprendizaje">Qué Aprenderás</a></li><li><a href="#modelo">Modelo</a></li><li><a href="#equipo">Equipo</a></li></ul></div>
+                <div class="footer-column"><h4>Legal</h4><ul><li><a href="#">Privacidad</a></li><li><a href="#">Términos</a></li></ul></div>
+                <div class="footer-column"><h4>Contacto</h4><div class="footer-contact-item"><i data-lucide="phone"></i><a href="tel:+19192722275">(919) 272-2275</a></div><div class="footer-contact-item"><i data-lucide="mail"></i><a href="mailto:info@giantsgroupllc.com">info@giantsgroupllc.com</a></div><div class="footer-contact-item"><i data-lucide="map-pin"></i><span>1648 N Market Dr Suite A<br>Raleigh, NC 27609</span></div></div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">© 2025 Giants Group LLC. Todos los derechos reservados.</p>
+            </div>
+            <div class="footer-disclaimer"><p>Giants Group LLC es una organización independiente de distribuidores autorizados. No estamos afiliados a ninguna corporación de productos ni a Meta Platforms, Inc. Los resultados mostrados no garantizan ingresos específicos.</p></div>
+        </div>
+    </footer>
+
+    <!-- WHATSAPP FLOTANTE -->
+    <div class="whatsapp-float">
+        <a href="https://wa.me/19192722275?text=Hola,%20me%20interesa%20la%20oportunidad%20de%20Giants%20Group" target="_blank">
+            <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        </a>
+    </div>
+
+    <script>
+        lucide.createIcons();
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => { navbar.classList.toggle('scrolled', window.scrollY > 50); });
+        const mobileToggle = document.getElementById('mobileToggle');
+        const navLinks = document.getElementById('navLinks');
+        mobileToggle.addEventListener('click', () => { navLinks.classList.toggle('active'); });
+        document.querySelectorAll('.nav-links a').forEach(link => { link.addEventListener('click', () => { navLinks.classList.remove('active'); }); });
+        document.querySelectorAll('.faq-item').forEach(item => {
+            item.querySelector('.faq-question').addEventListener('click', () => {
+                const isActive = item.classList.contains('active');
+                document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+                if (!isActive) item.classList.add('active');
+            });
+        });
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            });
+        });
+        // Animation on scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if (entry.isIntersecting) { entry.target.style.opacity = '1'; entry.target.style.transform = 'translateY(0)'; } });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.oportunidad-card, .aprendizaje-card, .equipo-card, .testimonio-card, .faq-item').forEach(el => {
+            el.style.opacity = '0'; el.style.transform = 'translateY(30px)'; el.style.transition = 'all 0.6s ease'; observer.observe(el);
+        });
+        // Form submit
+        document.getElementById('applicationForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('¡Gracias por tu aplicación! Te contactaremos pronto por WhatsApp.');
+        });
+    </script>
+</body>
+</html>
